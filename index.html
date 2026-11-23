@@ -11,7 +11,7 @@
   <link rel="icon" href="img/logo-icono.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -26,7 +26,7 @@
       <nav class="nav" aria-label="Principal">
         <a href="index.html" class="active">Inicio</a>
         <a href="productos.html">Nuestros Productos</a>
-        <a href="#historia">Nuestra Historia</a>
+        <a href="quienes-somos.html">Quiénes somos</a>
         <a href="#contacto">Contacto</a>
       </nav>
       <div class="actions">
@@ -46,21 +46,43 @@
   </header>
 
   <main>
-    <!-- ============ HERO ============ -->
-    <section class="hero">
-      <div class="wrap">
-        <div class="hero-text">
-          <div class="eyebrow">Artesanías con amor</div>
-          <h1>El Taller de<br>Macla <span class="heart">♡</span></h1>
-          <p class="lead">Creaciones artesanales que transmiten amor y protección.</p>
-          <div class="hero-cta">
-            <a class="btn btn-outline" href="productos.html">Descubrir productos →</a>
+    <!-- ============ BANNERS (carrusel) ============ -->
+    <section class="hero-slider" aria-roledescription="carrusel" aria-label="Banners principales">
+      <div class="slides">
+        <!-- Banner 1 -->
+        <div class="hero slide is-active" aria-roledescription="banner" aria-label="1 de 2">
+          <div class="wrap">
+            <div class="hero-text">
+              <div class="eyebrow">Artesanías con amor</div>
+              <h1>El Taller de<br>Macla <span class="heart">♡</span></h1>
+              <p class="lead">Creaciones artesanales que transmiten amor y protección.</p>
+              <div class="hero-cta">
+                <a class="btn btn-outline" href="productos.html">Ver productos</a>
+              </div>
+            </div>
+            <div class="hero-media">
+              <img src="img/productos/virgen-florentina.jpg" alt="Virgen Madre Florentina, hecha a mano con telas florales y pan de oro">
+            </div>
           </div>
         </div>
-        <div class="hero-media">
-          <img src="img/productos/virgen-florentina.jpg" alt="Virgen Madre Florentina, hecha a mano con telas florales y pan de oro">
+        <!-- Banner 2 -->
+        <div class="hero slide" aria-roledescription="banner" aria-label="2 de 2">
+          <div class="wrap">
+            <div class="hero-text">
+              <div class="eyebrow">Pequeños ángeles, grandes bendiciones</div>
+              <h1>Cruz<br>Angelito <span class="heart">♡</span></h1>
+              <p class="lead">Hechos a mano para acompañar y proteger a los más pequeños.</p>
+              <div class="hero-cta">
+                <a class="btn btn-outline" href="productos.html#angelito">Ver productos</a>
+              </div>
+            </div>
+            <div class="hero-media">
+              <img src="img/productos/angelito-baby-blue.jpg" alt="Cruz Angelito Baby Blue hecha a mano" loading="lazy">
+            </div>
+          </div>
         </div>
       </div>
+      <div class="slider-dots" aria-label="Elegir banner"></div>
     </section>
 
     <!-- ============ COLECCIONES ============ -->
@@ -84,32 +106,11 @@
       </div>
     </section>
 
-    <!-- ============ HISTORIA ============ -->
-    <section class="section" id="historia">
-      <div class="wrap story">
-        <div class="story-media reveal">
-          <img src="img/productos/virgen-lavanda.jpg" alt="Virgen Madre Lavanda hecha a mano" loading="lazy">
-          <div class="stamp"><img src="img/logo-icono.png" alt=""></div>
-        </div>
-        <div class="reveal">
-          <div class="eyebrow">Nuestra historia</div>
-          <h2 class="h2">Bienvenidos al Taller de Macla <span style="color:var(--gold)">♡</span></h2>
-          <p>Aquí doy vida a pequeñas piezas llenas de encanto: virgencitas y angelitos creados de manera artesanal, con mis manos, mucho amor y especial cuidado en cada detalle.</p>
-          <p>Disfruto eligiendo cada material, combinando texturas, colores y delicadas telas, para conseguir que cada creación tenga su propia esencia y sea verdaderamente única.</p>
-          <p>Cada pieza nace de mi deseo de transmitir delicadeza, ternura y esa hermosa sensación de amor y protección que representa la maternidad.</p>
-          <ul class="materials" aria-label="Materiales">
-            <li>Telas delicadas</li><li>Resina</li><li>Madera</li><li>Pan de oro</li>
-          </ul>
-          <div class="signature">Maríaclaudia<small>Creadora del Taller de Macla</small></div>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ CÓMO COMPRAR ============ -->
     <section class="section alt" id="como-comprar">
       <div class="wrap">
         <h2 class="title-line">¿Cómo comprar?</h2>
-        <p class="section-sub">Es muy sencillo, y te acompañamos en cada paso.</p>
+        <p class="section-sub">Es muy sencillo y te acompañamos en el proceso.</p>
         <div class="steps">
           <div class="step reveal">
             <div class="num">1</div>
@@ -174,7 +175,7 @@
         <div>
           <h4>Conócenos</h4>
           <ul>
-            <li><a href="index.html#historia">Nuestra historia</a></li>
+            <li><a href="quienes-somos.html">Quiénes somos</a></li>
             <li><a href="index.html#como-comprar">Cómo comprar</a></li>
             <li><a href="politica-privacidad.html">Política de privacidad</a></li>
           </ul>

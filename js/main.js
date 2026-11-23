@@ -58,7 +58,6 @@
   $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
   $$("[data-cfg]").forEach((el) => (el.textContent = CONFIG[el.dataset.cfg] || ""));
   const CLAVES = Object.keys(COLECCIONES);
-  const contar = (c) => PRODUCTOS.filter((p) => p.coleccion === c).length;
 
   // Enlaces a colecciones en el pie de página (se generan desde data.js)
   $$("[data-colecciones]").forEach((li) => {
@@ -70,17 +69,62 @@
   if (gridCol) {
     gridCol.innerHTML = CLAVES.map((k) => {
       const c = COLECCIONES[k];
+      const e = c.encuadre || {};
+      const vars = [
+        e.zoom ? `--zoom:${e.zoom}` : "",
+        e.origen ? `--origen:${e.origen}` : "",
+        e.pos ? `--pos:${e.pos}` : ""
+      ].filter(Boolean).join(";");
       return `
         <a class="collection reveal" href="productos.html#${k}">
-          <img src="${c.portada}" alt="Colección ${c.nombre}" loading="lazy">
+          <div class="media"><img src="${c.portada}" alt="Colección ${c.nombre}" loading="lazy" style="${vars}"></div>
           <div class="info">
-            <span class="count">${contar(k)} modelos</span>
             <h3>${c.nombre}</h3>
             <p>${c.lema}</p>
-            <span class="link-arrow">Ver colección <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h15M14 7l5 5-5 5"/></svg></span>
+            <span class="link-heart">Ver colección ${ICON.heart}</span>
           </div>
         </a>`;
     }).join("");
+  }
+
+  /* ---------- Carrusel de banners (Inicio) ---------- */
+  const slider = $(".hero-slider");
+  if (slider) {
+    const slides = $$(".slide", slider);
+    const dotsBox = $(".slider-dots", slider);
+    let actual = 0;
+    let timer;
+    dotsBox.innerHTML = slides.map((_, i) => `<button type="button" aria-label="Ver banner ${i + 1}"></button>`).join("");
+    const dots = $$("button", dotsBox);
+    const mostrar = (i) => {
+      actual = (i + slides.length) % slides.length;
+      slides.forEach((s, j) => {
+        s.classList.toggle("is-active", j === actual);
+        s.setAttribute("aria-hidden", j !== actual);
+        $$("a", s).forEach((a) => (a.tabIndex = j === actual ? 0 : -1));
+      });
+      dots.forEach((d, j) => d.setAttribute("aria-current", j === actual));
+    };
+    const auto = () => {
+      clearInterval(timer);
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        timer = setInterval(() => mostrar(actual + 1), 6000);
+      }
+    };
+    dots.forEach((d, i) => d.addEventListener("click", () => { mostrar(i); auto(); }));
+    slider.addEventListener("mouseenter", () => clearInterval(timer));
+    slider.addEventListener("mouseleave", auto);
+    // Deslizar con el dedo en celulares
+    let x0 = null;
+    slider.addEventListener("touchstart", (e) => (x0 = e.touches[0].clientX), { passive: true });
+    slider.addEventListener("touchend", (e) => {
+      if (x0 === null) return;
+      const dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 40) { mostrar(actual + (dx < 0 ? 1 : -1)); auto(); }
+      x0 = null;
+    });
+    mostrar(0);
+    auto();
   }
 
   /* ---------- Header ---------- */
@@ -349,8 +393,8 @@
   if (catalogo) {
     const tabsBox = $("#tabs");
     tabsBox.innerHTML =
-      `<button class="tab" role="tab" data-filter="todos">Todos<span class="n">(${PRODUCTOS.length})</span></button>` +
-      CLAVES.map((k) => `<button class="tab" role="tab" data-filter="${k}">${COLECCIONES[k].nombre}<span class="n">(${contar(k)})</span></button>`).join("");
+      `<button class="tab" role="tab" data-filter="todos">Todos</button>` +
+      CLAVES.map((k) => `<button class="tab" role="tab" data-filter="${k}">${COLECCIONES[k].nombre}</button>`).join("");
     const tabs = $$(".tab", tabsBox);
     const buscador = $("#buscar");
     const intro = $("#intro-coleccion");

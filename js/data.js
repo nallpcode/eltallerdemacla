@@ -30,6 +30,8 @@ const COLECCIONES = {
   virgen: {
     nombre: "Virgen Madre",
     portada: "img/productos/virgen-melek.jpg",
+    // Recorte de la portada para que no se vea el nombre escrito en la foto
+    encuadre: { zoom: 1.32, origen: "50% 0%", pos: "50% 20%" },
     lema: "Figuras llenas de fe y ternura",
     descripcion:
       "Virgencitas hechas a mano con telas delicadas, resina y pan de oro. Cada una transmite el amor y la protección de la maternidad.",

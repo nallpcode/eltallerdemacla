@@ -1,107 +1,140 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="420" height="420" viewBox="0 0 420 420">
-  <!-- Estampado floral original de El Taller de Macla -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="600" viewBox="0 0 600 600">
+  <!-- Estampado botánico de El Taller de Macla: ramitas sueltas en terracota, malva y salvia -->
   <defs>
-    <!-- hoja -->
-    <path id="hoja" d="M0 0 Q9 -7 21 -3 Q10 3 0 0Z"/>
+    <!-- hoja alargada con nervadura -->
+    <g id="hoja">
+      <path d="M0 0 Q10 -8 24 -3 Q11 4 0 0Z" fill="#b7baa7"/>
+      <path d="M1 0 Q11 -2 22 -3" fill="none" stroke="#8f957c" stroke-width=".6"/>
+    </g>
+    <!-- hoja fina (línea) -->
+    <path id="hojita" d="M0 0 Q6 -5 14 -2 Q6 2 0 0Z" fill="none" stroke="#9a8578" stroke-width=".8"/>
 
-    <!-- rama de hojas (estilo helecho) -->
-    <g id="rama" fill="#a9b297">
-      <path d="M0 0 Q45 -12 92 -30" fill="none" stroke="#a9b297" stroke-width="1.3" stroke-linecap="round"/>
-      <use xlink:href="#hoja" transform="translate(14,-4) rotate(-75)"/>
-      <use xlink:href="#hoja" transform="translate(14,-4) rotate(25)"/>
-      <use xlink:href="#hoja" transform="translate(30,-8) rotate(-70)"/>
-      <use xlink:href="#hoja" transform="translate(30,-8) rotate(20)"/>
-      <use xlink:href="#hoja" transform="translate(46,-13) rotate(-68)"/>
-      <use xlink:href="#hoja" transform="translate(46,-13) rotate(15)"/>
-      <use xlink:href="#hoja" transform="translate(62,-19) rotate(-65)"/>
-      <use xlink:href="#hoja" transform="translate(62,-19) rotate(10)"/>
-      <use xlink:href="#hoja" transform="translate(77,-25) rotate(-60) scale(.8)"/>
-      <use xlink:href="#hoja" transform="translate(77,-25) rotate(5) scale(.8)"/>
-      <use xlink:href="#hoja" transform="translate(90,-30) rotate(-22) scale(.75)"/>
+    <!-- rama de hojas larga -->
+    <g id="rama">
+      <path d="M0 0 Q55 -10 120 -40" fill="none" stroke="#8f957c" stroke-width="1.1" stroke-linecap="round"/>
+      <use xlink:href="#hoja" transform="translate(16,-3) rotate(-70)"/>
+      <use xlink:href="#hoja" transform="translate(18,-3) rotate(28)"/>
+      <use xlink:href="#hoja" transform="translate(36,-7) rotate(-66)"/>
+      <use xlink:href="#hoja" transform="translate(38,-7) rotate(22)"/>
+      <use xlink:href="#hoja" transform="translate(58,-13) rotate(-62)"/>
+      <use xlink:href="#hoja" transform="translate(60,-14) rotate(16)"/>
+      <use xlink:href="#hoja" transform="translate(80,-21) rotate(-58) scale(.9)"/>
+      <use xlink:href="#hoja" transform="translate(82,-22) rotate(10) scale(.9)"/>
+      <use xlink:href="#hoja" transform="translate(100,-30) rotate(-50) scale(.75)"/>
+      <use xlink:href="#hoja" transform="translate(102,-31) rotate(4) scale(.75)"/>
+      <use xlink:href="#hoja" transform="translate(118,-40) rotate(-24) scale(.65)"/>
     </g>
 
-    <!-- espiga con semillas -->
+    <!-- espiga de semillas (tipo sorgo) -->
     <g id="espiga">
-      <path d="M0 0 Q30 -6 70 -26" fill="none" stroke="#a9b297" stroke-width="1.2" stroke-linecap="round"/>
-      <g fill="#a98370">
-        <ellipse cx="22" cy="-6" rx="7" ry="3.2" transform="rotate(-60 22 -6)"/>
-        <ellipse cx="34" cy="-10" rx="8" ry="3.4" transform="rotate(-62 34 -10)"/>
-        <ellipse cx="47" cy="-15" rx="8" ry="3.4" transform="rotate(-64 47 -15)"/>
-        <ellipse cx="59" cy="-20" rx="6.5" ry="3" transform="rotate(-66 59 -20)"/>
+      <path d="M0 0 Q40 -8 96 -34" fill="none" stroke="#8f957c" stroke-width="1" stroke-linecap="round"/>
+      <g fill="#b48877">
+        <ellipse cx="40" cy="-10" rx="5" ry="2.6" transform="rotate(-50 40 -10)"/>
+        <ellipse cx="46" cy="-17" rx="5" ry="2.6" transform="rotate(-70 46 -17)"/>
+        <ellipse cx="52" cy="-12" rx="5" ry="2.6" transform="rotate(-30 52 -12)"/>
+        <ellipse cx="58" cy="-21" rx="5" ry="2.6" transform="rotate(-70 58 -21)"/>
+        <ellipse cx="63" cy="-16" rx="5" ry="2.6" transform="rotate(-35 63 -16)"/>
+        <ellipse cx="70" cy="-25" rx="4.5" ry="2.4" transform="rotate(-65 70 -25)"/>
+        <ellipse cx="75" cy="-21" rx="4.5" ry="2.4" transform="rotate(-35 75 -21)"/>
+        <ellipse cx="82" cy="-29" rx="4" ry="2.2" transform="rotate(-55 82 -29)"/>
+        <ellipse cx="88" cy="-30" rx="3.5" ry="2" transform="rotate(-30 88 -30)"/>
       </g>
-      <g fill="#a9b297">
-        <use xlink:href="#hoja" transform="translate(26,-6) rotate(20) scale(1.1)"/>
-        <use xlink:href="#hoja" transform="translate(50,-15) rotate(12)"/>
-        <use xlink:href="#hoja" transform="translate(68,-25) rotate(-18) scale(.8)"/>
+      <g fill="#7d5f55">
+        <circle cx="44" cy="-13" r=".9"/><circle cx="56" cy="-17" r=".9"/><circle cx="67" cy="-21" r=".9"/><circle cx="79" cy="-26" r=".9"/>
       </g>
+      <use xlink:href="#hoja" transform="translate(14,-3) rotate(-60)"/>
+      <use xlink:href="#hoja" transform="translate(22,-5) rotate(30)"/>
     </g>
 
-    <!-- flor redonda (zinnia) -->
+    <!-- flor grande tipo peonía / clavel -->
+    <g id="peonia">
+      <path d="M-20 4 Q-24 -8 -14 -16 Q-10 -24 0 -22 Q10 -26 16 -17 Q25 -12 21 -1 Q24 10 14 15 Q6 22 -4 17 Q-16 18 -20 4Z" fill="#c9957f"/>
+      <path d="M-12 -6 Q-4 -14 6 -10 M-14 4 Q-6 -4 4 0 Q12 -6 16 2 M-8 12 Q0 6 10 10 M-4 -16 Q2 -12 10 -16" fill="none" stroke="#a06f5c" stroke-width="1" stroke-linecap="round"/>
+      <circle cx="-6" cy="-2" r="1" fill="#8b5f50"/><circle cx="6" cy="6" r="1" fill="#8b5f50"/><circle cx="2" cy="-8" r="1" fill="#8b5f50"/>
+      <path d="M-14 16 Q-6 24 6 20" fill="none" stroke="#b7baa7" stroke-width="3" stroke-linecap="round"/>
+    </g>
+
+    <!-- zinnia / dalia de líneas -->
     <g id="zinnia">
-      <circle r="15" fill="#d6b2a0"/>
-      <circle r="12" fill="none" stroke="#a27a66" stroke-width="7" stroke-dasharray="1.2 2.1"/>
-      <circle r="5" fill="#c9cfb5"/>
-      <circle r="5" fill="none" stroke="#a27a66" stroke-width=".8" stroke-dasharray="1 1.4"/>
+      <circle r="18" fill="#a88275"/>
+      <circle r="16" fill="none" stroke="#efe7da" stroke-width="6" stroke-dasharray=".8 2.6" opacity=".55"/>
+      <circle r="10" fill="none" stroke="#7d5f55" stroke-width="4" stroke-dasharray=".8 1.8"/>
+      <circle r="5.5" fill="#d8cdb6"/>
+      <circle r="5.5" fill="none" stroke="#7d5f55" stroke-width=".7" stroke-dasharray="1 1.2"/>
     </g>
 
-    <!-- rosita / clavel -->
-    <g id="rosa">
-      <circle r="11" fill="#d5a48f"/>
-      <circle cx="-5" cy="-3" r="6" fill="#c8937d"/>
-      <circle cx="4" cy="3" r="5" fill="#c8937d"/>
-      <path d="M-7 2 Q-2 -6 6 -3 M-4 6 Q2 0 8 3" fill="none" stroke="#a97a66" stroke-width=".9" stroke-linecap="round"/>
+    <!-- rosita pequeña -->
+    <g id="rosita">
+      <circle r="8" fill="#cf9d88"/>
+      <path d="M-4 -1 Q0 -6 5 -2 Q1 3 -3 3" fill="none" stroke="#a06f5c" stroke-width=".9" stroke-linecap="round"/>
+      <circle cx="-3" cy="-4" r=".8" fill="#8b5f50"/><circle cx="3" cy="4" r=".8" fill="#8b5f50"/>
     </g>
 
-    <!-- florcita de cinco pétalos -->
-    <g id="florcita" fill="#d9ad99">
-      <ellipse cx="0" cy="-5" rx="3" ry="5"/>
-      <ellipse cx="0" cy="-5" rx="3" ry="5" transform="rotate(72)"/>
-      <ellipse cx="0" cy="-5" rx="3" ry="5" transform="rotate(144)"/>
-      <ellipse cx="0" cy="-5" rx="3" ry="5" transform="rotate(216)"/>
-      <ellipse cx="0" cy="-5" rx="3" ry="5" transform="rotate(288)"/>
-      <circle r="1.8" fill="#a27a66"/>
+    <!-- florcita de línea (cinco pétalos) -->
+    <g id="florcita" fill="none" stroke="#b07f6d" stroke-width=".9">
+      <ellipse cx="0" cy="-4.5" rx="2.6" ry="4.5"/>
+      <ellipse cx="0" cy="-4.5" rx="2.6" ry="4.5" transform="rotate(72)"/>
+      <ellipse cx="0" cy="-4.5" rx="2.6" ry="4.5" transform="rotate(144)"/>
+      <ellipse cx="0" cy="-4.5" rx="2.6" ry="4.5" transform="rotate(216)"/>
+      <ellipse cx="0" cy="-4.5" rx="2.6" ry="4.5" transform="rotate(288)"/>
+      <circle r="1.4" fill="#8b5f50" stroke="none"/>
     </g>
 
-    <!-- ramito con flores pequeñas -->
-    <g id="ramito">
-      <path d="M0 0 Q30 -4 58 -22 M24 -6 Q34 -20 32 -34 M42 -12 Q56 -12 66 -4" fill="none" stroke="#a9b297" stroke-width="1.1" stroke-linecap="round"/>
-      <g fill="#a9b297">
-        <use xlink:href="#hoja" transform="translate(12,-2) rotate(-60) scale(.8)"/>
-        <use xlink:href="#hoja" transform="translate(12,-2) rotate(25) scale(.8)"/>
-        <use xlink:href="#hoja" transform="translate(28,-18) rotate(-110) scale(.7)"/>
-      </g>
-      <use xlink:href="#florcita" transform="translate(58,-22) scale(.9)"/>
-      <use xlink:href="#florcita" transform="translate(32,-36) scale(.75)"/>
-      <use xlink:href="#florcita" transform="translate(67,-4) scale(.7)"/>
+    <!-- ramito silvestre de líneas finas -->
+    <g id="silvestre">
+      <path d="M0 0 Q36 -6 80 -26 M22 -4 Q30 -22 26 -40 M46 -12 Q58 -26 70 -34 M58 -18 Q72 -14 86 -8" fill="none" stroke="#9a8578" stroke-width=".9" stroke-linecap="round"/>
+      <use xlink:href="#hojita" transform="translate(10,-2) rotate(-60)"/>
+      <use xlink:href="#hojita" transform="translate(12,-1) rotate(30)"/>
+      <use xlink:href="#hojita" transform="translate(26,-26) rotate(-120)"/>
+      <use xlink:href="#hojita" transform="translate(36,-8) rotate(20)"/>
+      <use xlink:href="#florcita" transform="translate(80,-26)"/>
+      <use xlink:href="#florcita" transform="translate(26,-42) scale(.8)"/>
+      <use xlink:href="#florcita" transform="translate(71,-35) scale(.7)"/>
+      <use xlink:href="#florcita" transform="translate(88,-8) scale(.75)"/>
+      <circle cx="50" cy="-22" r="1.6" fill="#b48877"/><circle cx="62" cy="-30" r="1.4" fill="#b48877"/>
     </g>
 
-    <!-- tallo con rosa -->
-    <g id="tallo-rosa">
-      <path d="M0 0 Q20 -10 46 -16" fill="none" stroke="#a9b297" stroke-width="1.2" stroke-linecap="round"/>
-      <g fill="#a9b297">
-        <use xlink:href="#hoja" transform="translate(16,-6) rotate(-70)"/>
-        <use xlink:href="#hoja" transform="translate(26,-10) rotate(20)"/>
-      </g>
-      <use xlink:href="#rosa" transform="translate(54,-18)"/>
-      <use xlink:href="#rosa" transform="translate(38,-30) scale(.55)"/>
+    <!-- tallo con peonía y rositas -->
+    <g id="ramo-peonia">
+      <path d="M0 0 Q30 -10 64 -16 M30 -8 Q44 -24 46 -40 M44 -12 Q60 -2 74 4" fill="none" stroke="#8f957c" stroke-width="1.1" stroke-linecap="round"/>
+      <use xlink:href="#hoja" transform="translate(14,-4) rotate(-65) scale(.9)"/>
+      <use xlink:href="#hoja" transform="translate(20,-5) rotate(25) scale(.9)"/>
+      <use xlink:href="#hoja" transform="translate(52,-6) rotate(40) scale(.7)"/>
+      <use xlink:href="#peonia" transform="translate(78,-18) scale(.95)"/>
+      <use xlink:href="#rosita" transform="translate(47,-46)"/>
+      <use xlink:href="#rosita" transform="translate(80,6) scale(.8)"/>
+    </g>
+
+    <!-- tallo con zinnia -->
+    <g id="ramo-zinnia">
+      <path d="M0 0 Q26 -6 52 -18 M24 -6 Q30 -18 28 -28" fill="none" stroke="#8f957c" stroke-width="1.1" stroke-linecap="round"/>
+      <use xlink:href="#hojita" transform="translate(12,-2) rotate(-55)"/>
+      <use xlink:href="#hojita" transform="translate(14,-2) rotate(30)"/>
+      <use xlink:href="#florcita" transform="translate(28,-32) scale(.85)"/>
+      <use xlink:href="#zinnia" transform="translate(68,-26) scale(.95)"/>
     </g>
   </defs>
 
-  <g opacity=".8">
-    <use xlink:href="#rama"       transform="translate(20,100) rotate(-12)"/>
-    <use xlink:href="#zinnia"     transform="translate(160,48)"/>
-    <use xlink:href="#ramito"     transform="translate(215,90) rotate(-28)"/>
-    <use xlink:href="#tallo-rosa" transform="translate(320,60) rotate(28)"/>
-    <use xlink:href="#espiga"     transform="translate(90,190) rotate(18)"/>
-    <use xlink:href="#florcita"   transform="translate(48,165) scale(1.1)"/>
-    <use xlink:href="#rosa"       transform="translate(250,180) scale(1.25)"/>
-    <use xlink:href="#rama"       transform="translate(285,250) rotate(-150)"/>
-    <use xlink:href="#ramito"     transform="translate(30,300) rotate(-5)"/>
-    <use xlink:href="#zinnia"     transform="translate(150,300) scale(.9)"/>
-    <use xlink:href="#tallo-rosa" transform="translate(190,370) rotate(-20)"/>
-    <use xlink:href="#espiga"     transform="translate(320,330) rotate(-48)"/>
-    <use xlink:href="#florcita"   transform="translate(372,200) scale(.9)"/>
-    <use xlink:href="#zinnia"     transform="translate(385,395) scale(.7)"/>
-    <use xlink:href="#florcita"   transform="translate(115,395) scale(.8)"/>
+  <g opacity=".9">
+    <use xlink:href="#rama"        transform="translate(20,120) rotate(-20)"/>
+    <use xlink:href="#ramo-zinnia" transform="translate(190,70) rotate(-8)"/>
+    <use xlink:href="#silvestre"   transform="translate(330,110) rotate(-35)"/>
+    <use xlink:href="#ramo-peonia" transform="translate(450,60) rotate(32)"/>
+    <use xlink:href="#espiga"      transform="translate(110,250) rotate(22)"/>
+    <use xlink:href="#ramo-peonia" transform="translate(20,260) rotate(-38)"/>
+    <use xlink:href="#rama"        transform="translate(420,290) rotate(-160)"/>
+    <use xlink:href="#zinnia"      transform="translate(300,230) scale(.9)"/>
+    <use xlink:href="#silvestre"   transform="translate(470,200) rotate(15)"/>
+    <use xlink:href="#ramo-zinnia" transform="translate(40,420) rotate(18)"/>
+    <use xlink:href="#silvestre"   transform="translate(180,380) rotate(-60)"/>
+    <use xlink:href="#ramo-peonia" transform="translate(250,450) rotate(-14)"/>
+    <use xlink:href="#espiga"      transform="translate(410,470) rotate(-40)"/>
+    <use xlink:href="#rosita"      transform="translate(540,400) scale(1.1)"/>
+    <use xlink:href="#florcita"    transform="translate(250,330) scale(1.2)"/>
+    <use xlink:href="#rama"        transform="translate(470,580) rotate(-15)"/>
+    <use xlink:href="#silvestre"   transform="translate(60,570) rotate(-10)"/>
+    <use xlink:href="#zinnia"      transform="translate(570,40) scale(.7)"/>
+    <use xlink:href="#rosita"      transform="translate(140,170) scale(.9)"/>
+    <use xlink:href="#florcita"    transform="translate(370,560) scale(1.1)"/>
   </g>
 </svg>

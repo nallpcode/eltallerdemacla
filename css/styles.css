@@ -2,42 +2,52 @@
    El Taller de Macla — Estilos
    ========================================================= */
 :root {
-  --bg: #fbf8f3;
-  --cream: #f5efe6;
-  --sand: #ece2d4;
-  --sand-2: #e3d5c2;
-  --line: #e1d5c5;
+  /* Paleta oficial (Brand Board) */
+  --brand-crema: #EFE7DA;
+  --brand-marron: #AD815C;
+  --brand-salvia: #B7BAA7;
+  --brand-blanco: #F5F5EB;
+  --brand-arena: #C1B6A4;
+
+  --bg: var(--brand-blanco);
+  --cream: var(--brand-crema);
+  --sand: #e7ddcd;
+  --sand-2: var(--brand-arena);
+  --line: #dcd1bf;
   --ink: #4f3e31;
-  --ink-soft: #7a6656;
-  --gold: #ad8560;
-  --gold-dark: #8f6a48;
-  --rose: #c9a58b;
+  --ink-soft: #76624f;
+  --gold: var(--brand-marron);
+  --gold-dark: #8a6443;
+  --sage: var(--brand-salvia);
+  --rose: var(--brand-marron);
   --wa: #25d366;
-  --white: #fffdf9;
+  --white: #fbfbf4;
   --shadow: 0 10px 30px -12px rgba(92, 66, 44, .22);
   --radius: 4px;
-  --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  --body: "EB Garamond", Georgia, "Times New Roman", serif;
-  --script: "Allura", "Brush Script MT", cursive;
+  /* Tipografía de marca: Títulos = Millena · Subtítulos = Dekar
+     (si no están instaladas se usan alternativas muy parecidas de Google Fonts) */
+  --script: "Millena", "Dancing Script", "Brush Script MT", cursive;
+  --serif: "Dekar", "Barlow Semi Condensed", "Arial Narrow", sans-serif;
+  --body: "Dekar", "Barlow Semi Condensed", "Arial Narrow", sans-serif;
   --wrap: 1200px;
-  --pattern: url("../img/patron-floral.svg");
+  --pattern: url("../img/fondo-flores.jpg");
 }
 
 /* ---------- Fondos con estampado floral ---------- */
-.bg-floral, .section.alt, .quote, .page-head, .footer, .hero, .banner {
-  background-size: auto, 420px;
+.bg-floral, .section.alt, .page-head, .footer, .hero, .banner {
+  background-size: auto, 900px;
   background-repeat: no-repeat, repeat;
 }
-.section.alt { background-image: linear-gradient(rgba(245, 239, 230, .55), rgba(245, 239, 230, .55)), var(--pattern); background-color: var(--cream); }
-.quote       { background-image: linear-gradient(90deg, rgba(239, 229, 216, .2), rgba(245, 239, 230, .75) 55%), var(--pattern); background-color: #efe5d8; }
-.page-head   { background-image: linear-gradient(rgba(243, 236, 226, .45), rgba(243, 236, 226, .45)), var(--pattern); background-color: #f1e8dc; }
-.footer      { background-image: linear-gradient(rgba(243, 236, 226, .78), rgba(243, 236, 226, .78)), var(--pattern); background-color: #f3ece2; }
-.hero        { background-image: linear-gradient(100deg, rgba(239, 230, 218, .55), rgba(243, 236, 226, .85) 45%), var(--pattern); background-color: #efe6da; }
-.banner      { background-image: linear-gradient(90deg, rgba(241, 232, 220, .9), rgba(246, 240, 232, .72)), var(--pattern); background-color: #f1e8dc; }
+.section.alt { background-image: linear-gradient(rgba(243, 241, 236, .5), rgba(243, 241, 236, .5)), var(--pattern); background-color: #eeebe6; }
+.page-head   { background-image: linear-gradient(rgba(243, 241, 236, .5), rgba(243, 241, 236, .5)), var(--pattern); background-color: #eeebe6; }
+.footer      { background-image: linear-gradient(rgba(243, 241, 236, .75), rgba(243, 241, 236, .75)), var(--pattern); background-color: #eeebe6; }
+.hero        { background-image: linear-gradient(100deg, rgba(243, 241, 236, .55), rgba(243, 241, 236, .8) 45%), var(--pattern); background-color: #eeebe6; }
+.banner      { background-image: linear-gradient(90deg, rgba(243, 241, 236, .8), rgba(243, 241, 236, .5)), var(--pattern); background-color: #eeebe6; }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; overflow-x: hidden; }
-body { overflow-x: hidden; }
+/* "clip" (y no "hidden") para que el encabezado fijo (sticky) funcione */
+html { scroll-behavior: smooth; overflow-x: clip; }
+body { overflow-x: clip; }
 body {
   margin: 0;
   background: var(--bg);
@@ -626,3 +636,108 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   .socials { justify-content: center; }
 }
 [id] { scroll-margin-top: 80px; }
+
+/* =========================================================
+   Rediseño v2 — ajustes pedidos por el cliente
+   ========================================================= */
+
+/* ---------- Tipografía de marca ---------- */
+body { font-weight: 400; letter-spacing: .01em; }
+.hero h1, .banner-text h1, .page-head h1, .h2, .quote blockquote, .title-line {
+  font-family: var(--script); font-weight: 600; letter-spacing: 0; text-transform: none;
+}
+.title-line { font-size: clamp(34px, 4vw, 46px); color: var(--gold-dark); }
+.hero h1 { font-size: clamp(52px, 6.4vw, 88px); line-height: 1; color: var(--gold-dark); }
+.banner-text h1 { color: var(--gold-dark); }
+.page-head h1 { color: var(--gold-dark); }
+.collection h3 { font-family: var(--script); font-style: normal; font-weight: 600; font-size: 40px; color: var(--gold-dark); }
+.card h3, .step h3, .modal-body h2, .drawer-head h2, .legal h2, .form-card legend, .contact h3 {
+  font-family: var(--serif); font-weight: 500; letter-spacing: .02em;
+}
+.nav a { font-family: var(--serif); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; font-size: 15px; }
+.eyebrow { font-family: var(--serif); font-weight: 500; }
+.btn { font-family: var(--serif); letter-spacing: .06em; }
+.brand span { font-family: var(--script); font-weight: 600; }
+.signature { font-family: var(--script); font-weight: 600; }
+
+/* ---------- Encabezado fijo ---------- */
+.header { position: sticky; top: 0; z-index: 80; background: rgba(245, 245, 235, .96); }
+
+/* ---------- Carrusel de banners (Inicio) ---------- */
+.hero-slider { position: relative; }
+.hero-slider .slides { display: grid; }
+.hero-slider .slide {
+  grid-area: 1 / 1; opacity: 0; visibility: hidden; transition: opacity .9s ease, visibility .9s;
+}
+.hero-slider .slide.is-active { opacity: 1; visibility: visible; }
+.hero-text { padding-left: clamp(24px, 5vw, 80px); padding-right: 24px; }
+.slider-dots {
+  position: absolute; left: 0; right: 0; bottom: 22px; z-index: 5;
+  display: flex; justify-content: center; gap: 12px;
+}
+.slider-dots button {
+  width: 11px; height: 11px; border-radius: 50%; padding: 0;
+  border: 1px solid var(--gold-dark); background: transparent; transition: background .3s, transform .3s;
+}
+.slider-dots button[aria-current="true"] { background: var(--gold-dark); transform: scale(1.15); }
+.slider-dots button:hover { background: var(--sand-2); }
+
+/* ---------- Colecciones ---------- */
+.collection .media { overflow: hidden; position: relative; min-height: 100%; }
+.collection .media img { position: absolute; inset: 0; }
+.collection .media img {
+  object-position: var(--pos, center);
+  transform: scale(var(--zoom, 1)); transform-origin: var(--origen, center);
+}
+.collection:hover .media img { transform: scale(calc(var(--zoom, 1) * 1.05)); }
+.link-heart {
+  font-family: var(--serif); font-size: 17px; letter-spacing: .08em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 10px; color: var(--gold-dark); align-self: flex-start;
+}
+.link-heart svg { width: 18px; height: 18px; fill: var(--gold); stroke: none; transition: transform .25s; }
+.collection:hover .link-heart svg { transform: scale(1.2); }
+
+/* ---------- ¿Cómo comprar? ---------- */
+#como-comprar .title-line { font-weight: 700; font-size: clamp(46px, 5.4vw, 64px); }
+#como-comprar .section-sub { font-size: clamp(21px, 2.2vw, 26px); color: var(--ink); max-width: none; }
+.step { border: 1.5px solid var(--gold-dark); background: var(--white); }
+.step .num {
+  width: 70px; height: 64px; border: 0; border-radius: 0; padding-bottom: 6px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 22'%3E%3Cpath fill='%23AD815C' d='M12 21.5s-9.5-5.6-11.4-11.4C-.9 5.6 1.8 1 6.2 1c2.6 0 4.6 1.5 5.8 3.4C13.2 2.5 15.2 1 17.8 1c4.4 0 7.1 4.6 5.6 9.1C21.5 15.9 12 21.5 12 21.5z'/%3E%3C/svg%3E") center / contain no-repeat;
+  color: #fff; font-family: var(--serif); font-weight: 600; font-size: 26px;
+}
+
+/* ---------- Frase: juego de colores ---------- */
+.quote { background: linear-gradient(90deg, var(--sage) 0 50%, var(--gold) 50% 100%); color: var(--brand-blanco); }
+.quote .wrap { min-height: 260px; }
+.quote-logo { mix-blend-mode: screen; filter: invert(1) grayscale(1) brightness(2.4); opacity: .95; }
+.quote blockquote { color: var(--brand-blanco); font-size: clamp(30px, 3.2vw, 42px); line-height: 1.25; }
+.quote .divider { color: var(--brand-crema); }
+.quote .divider::before, .quote .divider::after { background: rgba(245, 245, 235, .55); }
+
+/* ---------- Quiénes somos ---------- */
+.story-media .creadora {
+  width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 200px 200px var(--radius) var(--radius);
+  background: var(--cream);
+}
+.story-media .creadora.is-placeholder { object-fit: contain; padding: 18%; mix-blend-mode: multiply; }
+
+@media (max-width: 1080px) {
+  .collection .media img { position: static; aspect-ratio: 16 / 10; }
+}
+@media (max-width: 860px) {
+  .hero-text { padding: 10px 16px 64px; }
+  .slider-dots { bottom: 26px; }
+  .quote { background: linear-gradient(180deg, var(--sage) 0 42%, var(--gold) 42% 100%); }
+  .quote .wrap { gap: 40px; }
+  .collection .media img { aspect-ratio: 16 / 10; }
+}
+
+/* ---------- Legibilidad sobre el fondo de flores ---------- */
+.section.alt .title-line, .section.alt .section-sub, .section.alt .card h3, .section.alt .card .meta,
+.hero-text, .banner-text, .page-head .wrap {
+  text-shadow: 0 0 6px #f3f1ec, 0 0 12px #f3f1ec, 0 0 18px #f3f1ec;
+}
+.section.alt .section-sub { color: var(--ink); }
+.section.alt .btn-ghost, .hero .btn-outline { background: rgba(245, 245, 235, .92); }
+.section.alt .btn-ghost:hover, .hero .btn-outline:hover { background: var(--ink); }

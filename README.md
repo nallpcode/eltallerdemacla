@@ -7,6 +7,7 @@ Sitio estático (HTML, CSS y JavaScript). No necesita instalar nada: abre `index
 ```
 index.html                 Inicio
 productos.html             Catálogo con pestañas y buscador
+quienes-somos.html         Quiénes somos (historia + foto de la creadora: img/creadora.jpg)
 libro-reclamaciones.html   Libro de Reclamaciones virtual
 politica-privacidad.html   Política de privacidad
 css/styles.css             Estilos (colores en :root, arriba del archivo)
